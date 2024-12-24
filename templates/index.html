@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Daily Updates</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1 class="mb-4 text-center">Daily Updates</h1>
+
+            <!-- News Section -->
+            <div class="card mb-3">
+                <div class="card-header"><h3>Trending News</h3></div>
+                <div class="card-body">
+                    <ul>
+                        {% for item in news %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Horoscope Section -->
+            <div class="card mb-3">
+                <div class="card-header"><h3>Horoscope</h3></div>
+                <div class="card-body">{{ horoscope }}</div>
+            </div>
+
+            <!-- On This Day Section -->
+            <div class="card mb-3">
+                <div class="card-header"><h3>On This Day</h3></div>
+                <div class="card-body">
+                    <ul>
+                        {% for event in history %}
+                        <li>{{ event }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Weather Section -->
+            <div class="card mb-3">
+                <div class="card-header"><h3>Weather</h3></div>
+                <div class="card-body">{{ weather }}</div>
+            </div>
+
+            <!-- Daily Quote Section -->
+            <div class="card mb-3">
+                <div class="card-header"><h3>Daily Quote</h3></div>
+                <div class="card-body">{{ quote }}</div>
+            </div>
+
+            <!-- Exchange Rates Section -->
+            <div class="card mb-3">
+                <div class="card-header"><h3>Exchange Rates</h3></div>
+                <div class="card-body">
+                    <ul>
+                        {% for currency, rate in exchange_rates.items() %}
+                        <li>{{ currency }}: {{ rate }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Random Fact Section -->
+            <div class="card mb-3">
+                <div class="card-header"><h3>Random Fact</h3></div>
+                <div class="card-body">{{ fact }}</div>
+            </div>
+
+            <!-- Crypto Price Section -->
+            <div class="card mb-3">
+                <div class="card-header"><h3>Crypto Price</h3></div>
+                <div class="card-body">{{ crypto }}</div>
+            </div>
+        </div>
+    </body>
+</html>
